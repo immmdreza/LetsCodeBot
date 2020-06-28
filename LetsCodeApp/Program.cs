@@ -28,6 +28,7 @@ namespace LetsCodeApp
             Handlers.Add(new StartMessage());
             Handlers.Add(new NewMembers());
             Handlers.Add(new SetGroupInfo());
+            Handlers.Add(new ShowAbout());
 
             telegramBotClient.OnUpdate += async (sender, e) =>
             {
