@@ -42,16 +42,25 @@ namespace LetsCodeApp.Handlers.UpdateHandlers
                     }
                 case "/welcome":
                     {
-                        var c = new GroupServices();
+                        ChatMember[] admins = await botClient.GetChatAdministratorsAsync(n.ChatId);
 
-                        var wlc = await c.WlcmsgByTlId(n.ChatId);
-
-                        if (string.IsNullOrEmpty(wlc))
+                        if (admins.Any(x => x.User.Id == n.Sender.Id))
                         {
-                            return false;
-                        }
+                            GroupServices c = new GroupServices();
 
-                        await botClient.SendTextMessageAsync(n.ChatId, wlc);
+                            string wlc = await c.WlcmsgByTlId(n.ChatId);
+
+                            if (string.IsNullOrEmpty(wlc))
+                            {
+                                return false;
+                            }
+
+                            await botClient.SendTextMessageAsync(n.ChatId, wlc);
+                        }
+                        else
+                        {
+                            await botClient.SendTextMessageAsync(n.ChatId, "Admin only!");
+                        }
 
                         return true;
                     }
