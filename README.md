@@ -1,4 +1,4 @@
-# LetsCodeBot
+# LetsCodeBot ([Let's C#de bot](https://t.me/lets_codebot))
 this is a telegram bot written using **C#** and on **.Net Core**
 
 This project uses [Telegram.Bot](https://github.com/TelegramBots/Telegram.Bot) to communicate with telegram bot api.
