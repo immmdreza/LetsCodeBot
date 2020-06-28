@@ -7,6 +7,7 @@ This project uses [Telegram.Bot](https://github.com/TelegramBots/Telegram.Bot) t
 This project built for learning purposes .
 And for now has following options :
   * Communicate with [telegram bot api](https://core.telegram.org/bots/api)
+  * Implementation of **Repository design pattern**.
   * Communicate with Sql Server using EntityFrameworkCore
   * Code first data models and [Migration Feature](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli) of .Net Core and **Nuget Package Manager**
   
